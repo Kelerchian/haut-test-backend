@@ -17,7 +17,7 @@ services:
     command:
       - sh
       - -c
-      - cp /usr/bin/cargo-watch cargo_workspace/cargo/bin/cargo-watch && cd cargo_workspace && cargo watch -i '**/*target' -i cargo -x run 
+      - cd /cargo_workspace && cargo watch -i '**/*target' -i cargo -x run 
   db:
     image: postgres:12
     environment:
