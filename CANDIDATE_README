@@ -1,0 +1,6 @@
+- Note: several tweaks on Dockerfile and docker-compose.yaml
+  - docker-compose.yaml's initial command seems to be missing absolute path slashes. Using `/cargo-workspace/a/b/c` and `cargo-workspace/a/b/c` can have different meaing depending on the current working directory.
+  - `cp /usr/bin/cargo-watch cargo_workspace/cargo/bin/cargo-watch` doesn't work on fresh install because `cargo_workspace/cargo/bin` won't exist yet. 
+  - I also switch cargo-watch's install to using `cargo install`. This might be not fault-tolerant if newer cargo watch has different command line args, but it should hold at least for several days.
+- If the above behavior are not intended, I suggest to check the repo to make sure it runs on fresh install.
+- Cheers!
